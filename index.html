@@ -579,22 +579,22 @@ festejos-29/10</h3>
             <div class="col-md-3 col-sm-6">
                                           <div class="blog-item ">
                                               <div class="blog-image">
-                                                  <img src="http://placehold.it/270x170" class="attachment-medium wp-post-image" alt="bloghome4" />
+                                                  <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=170&maxWidth=270" class="attachment-medium wp-post-image" alt="bloghome4" />
                                               </div>
                                               <div class="blog-description">
-                                                  <h3><a href="#">Nulla facilisis vitae</a></h3>
+                                                  <h3><a href="#">{{:titulo}}</a></h3>
                                                   <span class="tzblog_meta">
-                                                      February 5, 2015                                /
-                                                      <a href="#" title="Comment on Nulla facilisis vitae">Leave a comment</a>
+                                                     {{:~format(data_pub)}}
+                                                   
                                                   </span>
-                                                  <p>Thank you for choosing CosmoThemes and purchasing one of our Premium WordPress Themes your choice is greatly.</p>
-                                                  <a class="tzblog_readmore" href="#">READ MORE</a>
+                                                  <p>{{:texto.substring(0,250)}}...</p>
+                                                  <a class="tzblog_readmore" href="#">LER MAIS</a>
                                               </div>
                                           </div>
                                       </div>
                                     
         </script>
-        jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=3&page=1&id_versao='+id, "template", "conteudo"); })
+      
         <script type='text/javascript' src='js/contact-form-7/jquery.form.min.js'></script>
         <script type='text/javascript' src='js/contact-form-7/scripts.js'></script>
         <script type='text/javascript' src='js/woocommerce/add-to-cart.min.js'></script>
@@ -615,6 +615,15 @@ festejos-29/10</h3>
         <script type='text/javascript' src='js/jquery.jplayer.min.js'></script>
         <script type='text/javascript' src='js/jplayer.playlist.min.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
+        <script src="js/jquery.simplePagination.js"></script>
+        <script src="js/jsrender.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/jquery.ui.datepicker.js"></script>
         <script src="js/busca.js"></script>
+
+        <script>
+  
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=4&page=1', "template", "noticias"); })
+        </script>
     </body>
 </html>

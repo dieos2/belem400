@@ -256,16 +256,14 @@ function process(data, callback,temp, resu, page, pageAnterior) {
        
     
    
-    $(".txttelefone").mask("(00) 0000-00009");
+     
     if (callback) {
         callback();
     }
  
-    setTimeout(
-      function () { $(".paginadorTimeLine ul li:last-child").addClass("last-item") },
-        20);
+  
    
-    MontaTimeLine();
+  
 }
 
 
