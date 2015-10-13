@@ -1,23 +1,23 @@
-﻿$.get("_head.html", function (data) {
-    $("head").append(data);
+﻿jQuery.get("_head.html", function (data) {
+    jQuery("head").append(data);
 
 });
-$.get("_menu.html", function (data) {
-    $("#menu").html(data);
+jQuery.get("_menu.html", function (data) {
+    jQuery("#menu").html(data);
 
 });
-$.get("_obrt.html", function (data) {
-    $("#o_brt").html(data);
+jQuery.get("_obrt.html", function (data) {
+    jQuery("#o_brt").html(data);
 
 });
 
 
-$.get("index (3).html", function (data) {
-    $("#conteudoTimeLine").html(data);
+jQuery.get("index (3).html", function (data) {
+    jQuery("#conteudoTimeLine").html(data);
 
 });
-$.get("_footer.html", function (data) {
-    $("footer").html(data);
+jQuery.get("_footer.html", function (data) {
+    jQuery("footer").html(data);
 })
 
   var _gaq = _gaq || [];
