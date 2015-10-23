@@ -645,28 +645,16 @@
         </script>
         <script type="text/html" id="templateTimeLine">
             <div class="item" data-id="{{:~formataDataSemHora(data_pub)}}" data-description="{{:titulo}}" data-count="0" style="padding-left: 0px; padding-right: 0px; margin-left: 5px; margin-right: 5px; float: left; position: relative; -webkit-user-select: none;">
-             {{if id_galeria != 0}}   <div class="">
-                    <a class="image_rollover_bottom con_borderImage" data-description="ZOOM IN" href="http://www.agenciabelem.com.br/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}" rel="lightbox[timeline]" style="-webkit-user-select: none;">
-                        <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=230&maxWidth=430" class="" height="230">
-
-                        <div class="image_roll_glass" style="-webkit-user-select: none;"></div>
-                        <div class="image_roll_zoom" style="left: 0px; top: 100%; -webkit-user-select: none;"></div>
-                    </a>
+           
+               
+                <div class="blog-item ">
+                    <div class="blog-description">
+                        <h2 >{{:~format(data_pub)}}</h2>
+                        <h3 style="padding: 16px; text-align: -webkit-center;" ><a>{{:titulo.toUpperCase()}}</a></h3>
+                        <div class="read_more" data-id="{{:~formataDataSemHora(data_pub)}}" data-count="0" style="margin:0 35% 0 35%">Ver Evento</div>
+                    </div>
                 </div>
-                {{else}}
-                <div class="">
-                    <a class="image_rollover_bottom con_borderImage" data-description="ZOOM IN" href="http://www.agenciabelem.com.br/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}" rel="lightbox[timeline]" style="-webkit-user-select: none;">
-                        <img src="images/eventoDefault.png" class="" height="230">
-
-                        <div class="image_roll_glass" style="-webkit-user-select: none;"></div>
-                        <div class="image_roll_zoom" style="left: 0px; top: 100%; -webkit-user-select: none;"></div>
-                    </a>
                 </div>
-                {{/if}}
-                <h2 style="-webkit-user-select: none;">{{:~format(data_pub)}}</h2>
-                <span style="-webkit-user-select: none;">{{:titulo}}</span>
-                <div class="read_more" data-id="{{:~formataDataSemHora(data_pub)}}" data-count="0" style="-webkit-user-select: none;">Ver Evento</div>
-            </div>
 
         </script>
         <script type='text/javascript' src='js/contact-form-7/jquery.form.min.js'></script>
@@ -698,8 +686,9 @@
       
        
         <script>
-            jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=100&order=asc', "templateTimeLine", "tl1"); })
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=4&page=1', "template", "noticias"); })
+          
+            jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=4&page=1', "template", "noticias"); })
+            jQuery(function () { var b = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=100&order=asc', "templateTimeLine", "tl1"); })
         </script>
     </body>
 </html> 

@@ -252,8 +252,11 @@ function process(data, callback,temp, resu, page, pageAnterior) {
   jQuery("#" + resu).show("slide", { direction: "left" }, 500);
           
         }
-         
-     
+      
+       
+        setTimeout(function () { jQuery('.t_line_m').find('a').first().click(); }, 1000);
+            
+      
        
     
    
