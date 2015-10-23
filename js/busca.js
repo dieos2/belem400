@@ -238,7 +238,8 @@ function buscaAPITimeLine(urlB, temp, resu) {
 };
 function process(data, callback,temp, resu, page, pageAnterior) {
   
-    var template = jQuery.templates("#"+temp);
+    var template = jQuery.templates("#" + temp);
+  
     var html = template.render(data, { format: formataData,formataDataSemHora:formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
     
        
@@ -408,7 +409,13 @@ function criaPlayerDeAudio() {
             });
     });
 }
-
+function compare(a,b) {
+  if (a.last_nom < b.last_nom)
+    return -1;
+  if (a.last_nom > b.last_nom)
+    return 1;
+  return 0;
+}
 function formataDataTimeline(data) {
 
     var d = new Date(data);
@@ -419,26 +426,13 @@ function formataDataTimeline(data) {
     var min = d.getMinutes();
     if (day < 10)
         day = "0" + day;
-   
-    NomeMes = new Array(12)
-    NomeMes[1] = "Janeiro"
-    NomeMes[2] = "Fevereiro"
-    NomeMes[3] = "Março"
-    NomeMes[4] = "Abril"
-    NomeMes[5] = "Maio"
-    NomeMes[6] = "Junho"
-    NomeMes[7] = "Julho"
-    NomeMes[8] = "Agosto"
-    NomeMes[9] = "Setembro"
-    NomeMes[10] = "Outubro"
-    NomeMes[11] = "Novembro"
-    NomeMes[12] = "Dezembro"
-
+    if (month < 10)
+        month = "0" + month;
     if (hour < 10)
         hour = '0' + hour;
     if (min < 10)
         min = '0' + min;
-    var date = NomeMes[month] + " " + year;
+    var date = month + "/" + day + "/" + year;
 
     return date;
 }
