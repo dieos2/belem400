@@ -3023,7 +3023,7 @@ div.wpcf7-validation-errors{
 }
 .blog-item h3{
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     margin: 0 ;
     padding: 34px 0 10px;
@@ -3208,7 +3208,7 @@ div.wpcf7-validation-errors{
     padding: 0;
 }
 .jp-progress .jp-seek-bar {
-    background: none repeat scroll 0 0 #606060;
+    background: none repeat scroll 0 0 #fff;
 }
 .controls-progress {
     border-color: #f2f2f2;
@@ -3231,7 +3231,7 @@ div.wpcf7-validation-errors{
     float: left;
 }
 .jp-play-bar{
-    background: none repeat scroll 0 0 #2F326B;
+    background: none repeat scroll 0 0 #f8c10a;
     height: 2px;
 }
 .jp-controls button{
@@ -3240,11 +3240,12 @@ div.wpcf7-validation-errors{
     border: 0;
 }
 .jp-controls button i{
-    color: #606060;
+    color: #fff;
     font-size: 15px;
+    text-decoration: none;
 }
 .jp-controls button:hover  i{
-    color: #2F326B;;
+    color: #f8c10a;
 }
 .jp-playlist ul {
     list-style: none;
@@ -3277,8 +3278,8 @@ div.wpcf7-validation-errors{
 }
 .jp-playlist ul li.jp-playlist-current:before,
 .jp-playlist ul li:hover:before{
-    border-right: 2px solid #2F326B;
-    color: #2F326B;
+    border-right: 2px solid #f8c10a;
+    color: #f8c10a;
 }
 .jp-playlist ul li:hover{
     cursor: pointer;
@@ -3289,7 +3290,7 @@ div.wpcf7-validation-errors{
     top: 0;
     content: "\f028";
     font-family: 'FontAwesome';
-    color: #444444;
+    color: #fff;
     font-size: 14px;
     line-height: 55px;
 
@@ -3300,7 +3301,7 @@ div.wpcf7-validation-errors{
     display: inline-block;
     padding: 0;
     margin: 0;
-    color: #202020;
+    color: #f8c10a;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
