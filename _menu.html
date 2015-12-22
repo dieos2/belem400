@@ -2,7 +2,7 @@
             
                             <ul id="menu-primary" class="tz-menu nav-collapse themeple_megemenu">
                                 <li id="menu-item-102" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children">
-                                    <a href="index.html">Agenda</a>
+                                    <a href="#agenda">Agenda</a>
 
                                 </li>
                                 <li id="menu-item-397" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children">
@@ -21,7 +21,23 @@
                                 </li>
                              
                             </ul>
-                      
+                      <script>
+                          jQuery(function () { 
 
+                              jQuery('a[href^="#"]').on('click', function (e) {
+                                  e.preventDefault();
+
+                                  var target = this.hash;
+                                  $target = jQuery(target);
+
+                                  jQuery('html, body').stop().animate({
+                                      'scrollTop': $target.offset().top
+                                  }, 900, 'swing', function () {
+                                      window.location.hash = target;
+                                  });
+                                  return false;
+                              });
+        });
 
  
+                      </script>

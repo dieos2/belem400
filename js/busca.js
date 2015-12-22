@@ -7,9 +7,9 @@
 
     jQuery.get(url)
              .done(function (data) {
-               
+
                  process(data.resultado, callback, temp, resu);
-                 
+
                  jQuery('.paginador').pagination({
                      items: data.total,
                      itemsOnPage: data.itens,
@@ -19,26 +19,26 @@
                      onPageClick: function (page) {
                          jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
                              .done(function (d) {
-                                 
+
                                  process(d.resultado, callback, temp, resu);
                                  jQuery('.paginador').pagination('updateItems', d.total);
                              });
                      }
                  });
-                
+
              });
 
-    jQuery('.itensPagina').on("change",function () {
-      
+    jQuery('.itensPagina').on("change", function () {
+
         itens = jQuery(this).val();
         jQuery('.itensPagina, #itens').val(itens);
         jQuery('.paginador').pagination('updateItemsOnPage', itens);
     });
 
     jQuery('#pesquisaForm').submit(function (e) {
-       
+
         e.preventDefault();
-        
+
         jQuery('.paginador').pagination('updateItemsOnPage', jQuery('#itens').val());
     });
 
@@ -72,7 +72,7 @@
     });
 };
 function buscaAPIComSlide(urlB, temp, resu) {
-  
+
     var url = urlB,
         callback = typeof retorno !== 'undefined' ? retorno : null;
 
@@ -95,7 +95,7 @@ function buscaAPIComSlide(urlB, temp, resu) {
                      onPageClick: function (page) {
                          jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
                              .done(function (d) {
-                              
+
                                  if (pageAnterior < page) {
                                      jQuery("#" + resu).hide("slide", { direction: "left" }, 500);
                                  } else {
@@ -111,14 +111,14 @@ function buscaAPIComSlide(urlB, temp, resu) {
              });
 
     jQuery('.itensPagina').on("change", function () {
-       
+
         itens = jQuery(this).val();
         jQuery('.itensPagina, #itens').val(itens);
         jQuery('.paginador').pagination('updateItemsOnPage', itens);
     });
 
     jQuery('#pesquisaForm').submit(function (e) {
-      
+
         e.preventDefault();
 
         jQuery('.paginador').pagination('updateItemsOnPage', jQuery('#itens').val());
@@ -154,7 +154,7 @@ function buscaAPIComSlide(urlB, temp, resu) {
     });
 };
 function buscaAPITimeLine(urlB, temp, resu) {
-  
+
     var url = urlB,
         callback = typeof retorno !== 'undefined' ? retorno : null;
 
@@ -165,7 +165,7 @@ function buscaAPITimeLine(urlB, temp, resu) {
 
                  process(data.resultado, callback, temp, resu);
 
-           
+
                  var pageAnterior = 0;
                  jQuery('.paginadorTimeLine').pagination({
                      items: data.total,
@@ -178,13 +178,13 @@ function buscaAPITimeLine(urlB, temp, resu) {
                      onPageClick: function (page) {
                          jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
                              .done(function (d) {
-                             
+
                                  if (pageAnterior < page) {
                                      jQuery("#" + resu).hide("slide", { direction: "left" }, 500);
                                  } else {
                                      jQuery("#" + resu).hide("slide", { direction: "rigth" }, 500);
                                  }
-                                
+
                                  process(d.resultado, callback, temp, resu, page, pageAnterior);
                                  jQuery('.paginadorTimeLine').pagination('updateItems', d.total);
                                  pageAnterior = page;
@@ -194,14 +194,14 @@ function buscaAPITimeLine(urlB, temp, resu) {
              });
 
     jQuery('.itensPagina').on("change", function () {
-       
+
         itens = jQuery(this).val();
         jQuery('.itensPagina, #itens').val(itens);
         jQuery('.paginador').pagination('updateItemsOnPage', itens);
     });
 
     jQuery('#pesquisaForm').submit(function (e) {
-      
+
         e.preventDefault();
 
         jQuery('.paginador').pagination('updateItemsOnPage', jQuery('#itens').val());
@@ -236,44 +236,51 @@ function buscaAPITimeLine(urlB, temp, resu) {
         }
     });
 };
-function process(data, callback,temp, resu, page, pageAnterior) {
-  
+function process(data, callback, temp, resu, page, pageAnterior) {
+
     var template = jQuery.templates("#" + temp);
-  
-    var html = template.render(data, { format: formataData,formataDataSemHora:formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
-    
-       
-        jQuery("#" + resu).html(html);
- 
-        if (pageAnterior < page) {
-           jQuery("#" + resu).show("slide", { direction: "rigth" }, 500);
-        } else {
-            
-  jQuery("#" + resu).show("slide", { direction: "left" }, 500);
-          
-        }
-      
-       
-        setTimeout(function () { jQuery('.t_line_m').find('a').first().click(); }, 1000);
-            
-      
-       
-    
+
+    var html = template.render(data, { format: formataData, getAnoData: getAnoData, formatTimeLine: formatTimeLine, formataDataSemHora: formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
+
+
    
-     
+
+    if (pageAnterior < page) {
+        jQuery("#" + resu).show("slide", { direction: "rigth" }, 500);
+    } else {
+
+        jQuery("#" + resu).show("slide", { direction: "left" }, 500);
+
+    }
+
+    if (resu == "galerias") {
+        jQuery("#" + resu).prepend(html);
+    } else
+    {
+        jQuery("#" + resu).html(html);
+    }
+    setTimeout(function () { jQuery('.t_line_m').find('a').first().click(); }, 1000);
+
+    if (resu == 'tl1') {
+
+    }
+
+
+
+
     if (callback) {
         callback();
     }
- 
-  
-   
-  
+
+
+
+
 }
 
 
 
 function formataData(data) {
-   
+
     var d = new Date(data);
     var day = d.getDate();
     var month = d.getMonth() + 1;
@@ -313,14 +320,14 @@ function formataDataSemHora(data) {
     return date;
 }
 function formataTituloParaLink(titulo) {
-  
+
     var novoTitulo = titulo;
     return novoTitulo.replace(/ /g, "-");;
 }
 function formataPastaAudio(data) {
-   
+
     var d = new Date(data);
-    
+
     var day = d.getUTCDate();
     var month = d.getMonth() + 1;
     var year = d.getFullYear();
@@ -335,29 +342,29 @@ function formataPastaAudio(data) {
 }
 function formataTextoParaHiperLink(texto, filtros) {
     var hiperTexto = texto;
-    
+
     var RegExp = /[\[\"|\"\]]/g;
-      filtros = filtros.split(',');
-      
-        for (var i = 0; filtros.length > i; i++) {
-            
-            var filtro = filtros[i].replace(RegExp, "");
-          
+    filtros = filtros.split(',');
 
-            hiperTexto = hiperTexto.replace(filtro + " ", "<a style='text-decoration: underline ' href='/Noticias/" + filtro + "'> " + filtro + "</a> ");
-           
-        } return hiperTexto;
+    for (var i = 0; filtros.length > i; i++) {
 
-  
-   
-   
+        var filtro = filtros[i].replace(RegExp, "");
+
+
+        hiperTexto = hiperTexto.replace(filtro + " ", "<a style='text-decoration: underline ' href='/Noticias/" + filtro + "'> " + filtro + "</a> ");
+
+    } return hiperTexto;
+
+
+
+
 }
 function formataTexto(texto) {
     var hiperTexto = texto;
 
-     hiperTexto = hiperTexto.replace(filtro + " ", "<a style='text-decoration: underline ' href='/Noticias/" + filtro + "'> " + filtro + "</a> ");
+    hiperTexto = hiperTexto.replace(filtro + " ", "<a style='text-decoration: underline ' href='/Noticias/" + filtro + "'> " + filtro + "</a> ");
 
-     return hiperTexto;
+    return hiperTexto;
 
 
 
@@ -403,21 +410,21 @@ function criaPlayerDeAudio() {
         var id = $(this).attr("data-id");
         var data = $(this).attr("data-data");
         var arquivo = $(this).attr("data-arquivo");
-        var myCirclePlayer = new CirclePlayer("#jquery_jplayer_"+$(this).attr("data-id"),
+        var myCirclePlayer = new CirclePlayer("#jquery_jplayer_" + $(this).attr("data-id"),
             {
-                m4a: "http://www.redepara.com.br/imagens/anexo/"+data+"/"+arquivo,
-              
+                m4a: "http://www.redepara.com.br/imagens/anexo/" + data + "/" + arquivo,
+
             }, {
                 cssSelectorAncestor: "#cp_container_" + $(this).attr("data-id")
             });
     });
 }
-function compare(a,b) {
-  if (a.last_nom < b.last_nom)
-    return -1;
-  if (a.last_nom > b.last_nom)
-    return 1;
-  return 0;
+function compare(a, b) {
+    if (a.last_nom < b.last_nom)
+        return -1;
+    if (a.last_nom > b.last_nom)
+        return 1;
+    return 0;
 }
 function formataDataTimeline(data) {
 
@@ -479,7 +486,83 @@ function formataDatInternaTimeline(data) {
     NomeMes[10] = "Outubro"
     NomeMes[11] = "Novembro"
     NomeMes[12] = "Dezembro"
-    var date = day + " " +NomeMes[month];
+    var date = day + " " + NomeMes[month];
+
+    return date;
+}
+function formatTimeLine(data) {
+
+    var d = new Date(data);
+    var day = d.getUTCDate();
+    var diaSemana = d.getUTCDay();
+    var month = d.getUTCMonth() + 1;
+    var year = d.getUTCFullYear();
+    var hour = d.getUTCHours();
+    var min = d.getUTCMinutes();
+    if (day < 10)
+        day = "0" + day;
+    NomeMes = new Array(12)
+    NomeMes[1] = "Jan"
+    NomeMes[2] = "Fev"
+    NomeMes[3] = "Mar"
+    NomeMes[4] = "Abr"
+    NomeMes[5] = "Mai"
+    NomeMes[6] = "Jun"
+    NomeMes[7] = "Jul"
+    NomeMes[8] = "Ago"
+    NomeMes[9] = "Set"
+    NomeMes[10] = "Out"
+    NomeMes[11] = "Nov"
+    NomeMes[12] = "Dez"
+
+    Semana = new Array(7)
+    Semana[0] = "Domingo"
+    Semana[1] = "Segunda"
+    Semana[2] = "Terça"
+    Semana[3] = "Quarta"
+    Semana[4] = "Quinta"
+    Semana[5] = "Sexta"
+    Semana[6] = "Sábado"
+
+    var date = NomeMes[month].toUpperCase() + " | " + day + " " + Semana[diaSemana];
+
+    return date;
+}
+function getAnoData(data) {
+
+    var d = new Date(data);
+    var day = d.getUTCDate();
+    var diaSemana = d.getUTCDay();
+    var month = d.getUTCMonth() + 1;
+    var year = d.getUTCFullYear();
+    var hour = d.getUTCHours();
+    var min = d.getUTCMinutes();
+    if (day < 10)
+        day = "0" + day;
+    NomeMes = new Array(12)
+    NomeMes[1] = "Jan"
+    NomeMes[2] = "Fev"
+    NomeMes[3] = "Mar"
+    NomeMes[4] = "Abr"
+    NomeMes[5] = "Mai"
+    NomeMes[6] = "Jun"
+    NomeMes[7] = "Jul"
+    NomeMes[8] = "Ago"
+    NomeMes[9] = "Set"
+    NomeMes[10] = "Out"
+    NomeMes[11] = "Nov"
+    NomeMes[12] = "Dez"
+
+    Semana = new Array(7)
+    Semana[0] = "Domingo"
+    Semana[1] = "Segunda"
+    Semana[2] = "Terça"
+    Semana[3] = "Quarta"
+    Semana[4] = "Quinta"
+    Semana[5] = "Sexta"
+    Semana[6] = "Sábado"
+
+    var date = year;
 
     return date;
 }

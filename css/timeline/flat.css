@@ -259,14 +259,15 @@
 
 /* single item (margines set from javascript) */
 .timelineFlat .item {
-	width:250px;
-	height:220px;
-	background:#eaeaea; 
-    background-image: url(../../images/eventodefault.png);
-	color:#777777;
-	font-size:14px;
-	line-height:14px;
-	position: relative;
+    width: 250px;
+    height: 220px;
+    background: #eaeaea;
+    background-image: url('../../images/agenda_400anofundo.jpg');
+    color: #777777;
+    font-size: 14px;
+    line-height: 14px;
+    position: relative;
+  
 }
 .timelineFlat .item.item_node_hover:before {
 	content: "";
@@ -298,20 +299,38 @@
 	width:100%;
 }
 
-.timelineFlat .item h2 {
-	font-family: Montserrat;
-	padding: 20px 20px 10px;
-	margin: 0;
-	font-size:12px;
-	line-height:12px;
-	color: #2F326B;
-    font-weight: bold;
-	
-}
-.timelineFlat .item span{
-	display:block;
+    .timelineFlat .item h2 {
+        font-family: Montserrat;
+        padding: 20px 10px 20px 47px;
+        margin: 0;
+        font-size: 12px;
+        line-height: 12px;
+        color: #2F326B;
+        font-weight: bold;
+        background-image: url('../../images/botton.png');
+        background-repeat:no-repeat;
+        background-position: 10px 0px;
+         border-bottom: 1px solid #A2C0BC;
+    }
+.timelineFlat .item h2 span{
+	float: right;
 	margin:0px 20px 10px;
-	height:75px;
+    color: #2F326B;
+
+}
+.blog-description a{
+ 
+   text-decoration: none;
+}
+.blog-description a span{
+ 
+    line-height: 1.2;
+}
+.timelineFlat .item a{
+	font-size:18px;
+    color: #2F326B;
+    line-height:1;
+
 }
 .timelineFlat .item .read_more {
 	font-family: Montserrat;

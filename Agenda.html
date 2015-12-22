@@ -34,11 +34,14 @@
     <link rel='stylesheet' id='flexslider-css' href='css/flexslider.css' type='text/css' media='screen' />
     <link rel='stylesheet' id='style-css' href='style.css' type='text/css' media='all' />
     <link rel='stylesheet' href='style-inline.css' type='text/css' media='all' />
+    <link href="js/fullcalendar-2.5.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="js/fullcalendar-2.5.0/fullcalendar.print.css" rel="stylesheet" />
     <link rel='stylesheet' id='js_composer_front-css' href='css/js_composer_front.css' type='text/css' media='all' />
     <script type='text/javascript' src='js/jquery/jquery.js'></script>
     <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
     <script type='text/javascript' src='js/revslider/jquery.themepunch.tools.min.js'></script>
     <script type='text/javascript' src='js/revslider/jquery.themepunch.revolution.min.js'></script>
+    <script src="js/fullcalendar-2.5.0/fullcalendar.js"></script>
     <script type="text/javascript">
         var themeprefix = 'plazart';
         var imgpath = 'images/';
@@ -65,7 +68,7 @@
                 </button>
                 <button class="tz-search pull-right"> <i class="fa fa-search"></i></button>
                 <nav class="pull-right">
-                <div id="menu"></div>
+                    <div id="menu"></div>
                 </nav>
             </div>
         </header>
@@ -79,11 +82,11 @@
             </form>
         </div>
         <div id="conteudo"></div>
-      
+
 
         <footer class="tz-footer"></footer>
     </div>
-                    <script type="text/javascript">
+    <script type="text/javascript">
                         // Audio
                         //<![CDATA[
                         jQuery(document).ready(function () {
@@ -126,44 +129,42 @@
                                     });
                         });
                         //]]&gt;
-                    </script>
-                   
+    </script>
 
-                    <script type='text/javascript' src='js/contact-form-7/jquery.form.min.js'></script>
-                    <script type='text/javascript' src='js/contact-form-7/scripts.js'></script>
-                    <script type='text/javascript' src='js/woocommerce/add-to-cart.min.js'></script>
-                    <script type='text/javascript' src='js/woocommerce/jquery.blockUI.min.js'></script>
-                    <script type='text/javascript' src='js/woocommerce/woocommerce.min.js'></script>
-                    <script type='text/javascript' src='js/woocommerce/jquery.cookie.min.js'></script>
-                    <script type='text/javascript' src='js/woocommerce/cart-fragments.min.js'></script>
-                    <script type='text/javascript' src='js/bootstrap.min.js'></script>
-                    <script type='text/javascript' src='js/jquery.parallax-1.1.3.js'></script>
-                    <script type='text/javascript' src='js/owl.carousel.js'></script>
-                    <script type='text/javascript' src='js/jquery.flexslider.js'></script>
-                    <script type='text/javascript' src='js/off-canvas.js'></script>
-                    <script type='text/javascript' src='js/everlinecookie.js'></script>
-                    <script type='text/javascript' src='js/js_composer_front.js'></script>
-                    <script type='text/javascript' src='js/countdown.js'></script>
-                    <script type='text/javascript' src='js/jquery.isotope.min.js'></script>
-                    <script type='text/javascript' src='js/custom-portfolio.js'></script>
-                    <script type='text/javascript' src='js/jquery.jplayer.min.js'></script>
-                    <script type='text/javascript' src='js/jplayer.playlist.min.js'></script>
-                    <script type='text/javascript' src='js/custom.js'></script>
-                    <script src="js/jquery.simplePagination.js"></script>
-                    <script src="js/jsrender.min.js"></script>
-                    <script src="js/modernizr.js"></script>
-                    <script src="js/jquery.ui.datepicker.js"></script>
-                    <script src="js/busca.js"></script>
-                    <script src="js/script.js"></script>
+
+    <script type='text/javascript' src='js/contact-form-7/jquery.form.min.js'></script>
+    <script type='text/javascript' src='js/contact-form-7/scripts.js'></script>
+    <script type='text/javascript' src='js/woocommerce/add-to-cart.min.js'></script>
+    <script type='text/javascript' src='js/woocommerce/jquery.blockUI.min.js'></script>
+    <script type='text/javascript' src='js/woocommerce/woocommerce.min.js'></script>
+    <script type='text/javascript' src='js/woocommerce/jquery.cookie.min.js'></script>
+    <script type='text/javascript' src='js/woocommerce/cart-fragments.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/jquery.parallax-1.1.3.js'></script>
+    <script type='text/javascript' src='js/owl.carousel.js'></script>
+    <script type='text/javascript' src='js/jquery.flexslider.js'></script>
+    <script type='text/javascript' src='js/off-canvas.js'></script>
+    <script type='text/javascript' src='js/everlinecookie.js'></script>
+    <script type='text/javascript' src='js/js_composer_front.js'></script>
+    <script type='text/javascript' src='js/countdown.js'></script>
+    <script type='text/javascript' src='js/jquery.isotope.min.js'></script>
+    <script type='text/javascript' src='js/custom-portfolio.js'></script>
+    <script type='text/javascript' src='js/jquery.jplayer.min.js'></script>
+    <script type='text/javascript' src='js/jplayer.playlist.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+    <script src="js/jquery.simplePagination.js"></script>
+    <script src="js/jsrender.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.ui.datepicker.js"></script>
+    <script src="js/busca.js"></script>
+    <script src="js/script.js"></script>
     <script type="text/html" id="template">
-      
+
         <div class="single_post">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="thumbnail">
-                            <img class="img-responsive portrait" src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=1000&maxWidth=2000" width="1170" alt="IMAGE POST">
-                        </div>
+
                         <h2 class="single-title">{{:titulo}}</h2>
                         <span class="single-meta">
                             {{:~format(data_pub)}}
@@ -171,7 +172,7 @@
                         </span>
                         <div class="single-content">
                             {{:texto}}
-                           
+
                         </div>
                         <div class="single-tags">
                             <div class="meta-tags pull-left">
@@ -197,15 +198,19 @@
                 </div>
             </div>
         </div>
-       
-     
-    
+
+
+
 
     </script>
     <script>
     var url = window.location.href;
     var id = url.substring(url.lastIndexOf('=') + 1);
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=1&page=1&id_versao=' + id, "template", "conteudo"); })
+
+    jQuery(function () {
+        script
+        var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=1&page=1&id_versao=' + id, "template", "conteudo");
+    })
     </script>
 </body>
 </html>
