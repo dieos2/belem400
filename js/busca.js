@@ -240,7 +240,7 @@ function process(data, callback, temp, resu, page, pageAnterior) {
 
     var template = jQuery.templates("#" + temp);
 
-    var html = template.render(data, { format: formataData, getAnoData: getAnoData, formatTimeLine: formatTimeLine, formataDataSemHora: formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
+    var html = template.render(data, { format: formataData, getAnoData: getAnoData, formatTimeLine: formatTimeLine,formatSoComHora:formatSoComHora, formataDataSemHora: formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
 
 
    
@@ -565,4 +565,22 @@ function getAnoData(data) {
     var date = year;
 
     return date;
+}
+
+function formatSoComHora(data) {
+
+    var d = new Date(data);
+    var day = d.getUTCDate();
+    var diaSemana = d.getUTCDay();
+    var month = d.getUTCMonth() + 1;
+    var year = d.getUTCFullYear();
+    var hour = d.getUTCHours();
+    var min = d.getUTCMinutes();
+
+    if (min < 10)
+        min = "0" + min;
+    if (hour < 10)
+        hour = "0" + hour;
+
+    return hour + ":"+ min+"h";
 }
