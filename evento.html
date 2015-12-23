@@ -164,17 +164,14 @@
                        
                         <h2 class="single-title">{{:titulo}}</h2>
                         <span class="single-meta">
-                            {{:~format(data_pub)}}
+                            {{:~format(data)}}
 
                         </span>
                         <div class="single-content">
                             {{:texto}}
                            
                         </div>
-                        <div class="single-tags">
-                            <div class="meta-tags pull-left">
-                                Tags: <a href="#" rel="tag">love</a>, <a href="#" rel="tag">songs</a>
-                            </div>
+                      
                             <div class="single-share pull-right">
                                 <span>Compartilhar:</span>
                                 <!-- Facebook Button -->
@@ -203,7 +200,7 @@
     <script>
     var url = window.location.href;
     var id = url.substring(url.lastIndexOf('=') + 1);
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=1&page=1&id_versao=' + id, "template", "conteudo"); })
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/AgendaTodas/0?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=1&page=1&id_agenda=' + id, "template", "conteudo"); })
     </script>
 </body>
 </html>

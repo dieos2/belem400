@@ -575,7 +575,7 @@
 	filter: alpha(opacity=65);display:none;  position:absolute; padding: 0px 0px 0px 18px; width: 255px;     bottom: 30px;
 
     left: 25px;">
-                                                    {{:descricao}}
+                                                    {{:titulo}}
                                                 </span>
                                             </a>
                                         </div>
@@ -597,18 +597,18 @@
 
                             </script>
                             <script type="text/html" id="templateTimeLine">
-                                <div class="item" data-id="{{:~formataDataSemHora(data_pub)}}" data-description="{{:titulo}}" data-count="0" style="padding-left: 0px; padding-right: 0px; margin-left: 5px; margin-right: 5px; float: left; position: relative; -webkit-user-select: none;height: 250px">
+                                <div class="item" data-id="{{:~formataDataSemHora(data)}}" data-description="{{:titulo}}" data-count="0" style="padding-left: 0px; padding-right: 0px; margin-left: 5px; margin-right: 5px; float: left; position: relative; -webkit-user-select: none;height: 250px">
 
 
                                     <div class="blog-item ">
                                         <div class="blog-description">
-                                            <h2>{{:~formatTimeLine(data_pub)}} <span>{{:~getAnoData(data_pub)}}</span></h2>
+                                            <h2>{{:~formatTimeLine(data)}} <span>{{:~getAnoData(data)}}</span></h2>
                                             <div style="height: 160px; padding:10px; text-align:center;">
-                                                <a href="evento.html?id={{:id_versao}}">
+                                                <a href="evento.html?id={{:id}}">
                                                     <span>{{:titulo}}</span>
                                                 </a>
                                             </div>
-                                            <div class="" data-id="{{:~formataDataSemHora(data_pub)}}" data-count="0" style="text-align: center; padding-top:2px"><a style="font-size:12px;  color: #2F326B; text-decoration: none;" href="evento.html?id={{:id_versao}}">Leia Mais</a></div>
+                                            <div class="" data-id="{{:~formataDataSemHora(data)}}" data-count="0" style="text-align: center; padding-top:2px"><a style="font-size:12px;  color: #2F326B; text-decoration: none;" href="evento.html?id={{:id}}">Leia Mais</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -651,10 +651,12 @@
 
                                         })
                                     });
+                                    var dataIni = '23/12/2015';
                                     var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "template", "noticias");
                                     var b = buscaAPI('http://api.sgn.net.br/Api/Foto/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=8&page=1', "templateGaleria", "galerias");
                                     //var c = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "templateVideo", "galerias");
-                                    var d = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=100&order=asc', "templateTimeLine", "tl1");
+                                    //var d = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=100&order=asc', "templateTimeLine", "tl1");
+                                    var d = buscaAPI('http://api.sgn.net.br/Api/AgendaTodas/3?dataIni=' + dataIni + '&dataFim=&idOrgao=&termo=&filtro=&order=asc&itens=100&page=1', "templateTimeLine", "tl1");
                                 })
                             </script>
 </body>
