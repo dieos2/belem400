@@ -300,7 +300,7 @@
 }
 
     .timelineFlat .item h2 {
-        font-family: Montserrat;
+        
         padding: 20px 10px 20px 47px;
         margin: 0;
         font-size: 12px;
@@ -312,6 +312,20 @@
         background-position: 10px 0px;
          border-bottom: 1px solid #A2C0BC;
     }
+.timelineFlat .item span.TituloTimeline{
+	
+        padding: 20px 10px 20px 47px;
+        margin: 0;
+        font-size: 12px;
+        line-height: 12px;
+        color: #2F326B;
+        font-weight: bold;
+        background-image: url('../../images/botton.png');
+        background-repeat:no-repeat;
+        background-position: 10px 0px;
+         border-bottom: 1px solid #A2C0BC;
+
+}
 .timelineFlat .item h2 span{
 	float: right;
 	margin:0px 20px 10px;
