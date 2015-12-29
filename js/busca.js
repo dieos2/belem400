@@ -259,7 +259,7 @@ function process(data, callback, temp, resu, page, pageAnterior) {
     {
         jQuery("#" + resu).html(html);
     }
-    setTimeout(function () { jQuery('.t_line_m').find('a').first().click(); }, 1000);
+  
 
     if (resu == 'tl1') {
 

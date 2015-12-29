@@ -350,6 +350,27 @@
                 </div>
             </div>
         </div>
+        <div class="vc_row wpb_row vc_row-fluid vc_custom_1423134011704">
+            <div class="container">
+                <div class="row">
+                    <div class="vc_col-sm-12 wpb_column vc_column_container ">
+                        <div class="wpb_wrapper">
+                            <div class="container-custom">
+
+                                <div id="" class="timelineLoader" style="display: none;">
+                                    <img src="/js/timeline/loadingAnimation.gif" />
+
+                                </div>
+                                <!-- BEGIN TIMELINE -->
+                                <div id="tl1" class="timelineFlat tl1">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="vc_row wpb_row vc_row-fluid vc_custom_1423129790882">
             <div class="nocontainer">
                 <div class="vc_col-sm-12 wpb_column vc_column_container ">
@@ -500,7 +521,7 @@
                     <div class="vc_col-sm-12 wpb_column vc_column_container ">
                         <div class="wpb_wrapper">
                             <div class="container-custom">
-                                <h2 class="elementblog-title elementblog-title2" style="color:#fff !important">MULTIMÍDIA</h2>
+                                <h2 class="elementblog-title elementblog-title2" style="color:#fff !important">GALERIA</h2>
                                 <div class="row" id="galerias">
 
                                 </div>
@@ -511,34 +532,22 @@
                 </div>
             </div>
         </div>
-        <div class="vc_row wpb_row vc_row-fluid vc_custom_1423134011704">
-            <div class="container">
-                <div class="row">
-                    <div class="vc_col-sm-12 wpb_column vc_column_container ">
-                        <div class="wpb_wrapper">
-                            <div class="container-custom">
-                               
-                                <div id="" class="timelineLoader" style="display: none;">
-                                    <img src="/js/timeline/loadingAnimation.gif" />
-
-                                </div>
-                                <!-- BEGIN TIMELINE -->
-                                <div id="tl1" class="timelineFlat tl1">
-
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      
                                 <footer class="tz-footer"></footer>
                             </div>
                             <script type="text/javascript">
 
                                 jQuery(window).load(function () {
                                     // light
-                                    jQuery('#tl1').timeline();
+                                    setTimeout(function () {
+                                        jQuery('#tl1').timeline({ openTriggerClass: '.read_more',
+                                            startItem: '05/01/2016'
+                                            
+                                            
+                                        });
+                                        setTimeout(function () { jQuery('.t_line_m').find('a').first().click(); }, 1000);
+                                    }, 500)
+                                  
 
 
                                 });
