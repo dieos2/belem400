@@ -91,7 +91,7 @@
                         <h2 id="titulo" class="single-title"></h2>
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
-                            <ol id="passador" class="carousel-indicators"></ol>
+                            <ol id="passador" class="carousel-indicators" style="top: 20px"></ol>
 
                             <!-- Wrapper for slides -->
                             <div id="conteudo" class="carousel-inner" role="listbox">
@@ -135,7 +135,30 @@
             <div class="principal">
                 <img src="http://redepara.com.br/Resize/CreateThumbnail?path=/imagens/galeria/{{:id_galeria}}/{{:nome}}&maxHeight=700&maxWidth=770" />
 
+                <div style="    position: fixed;
+    bottom: 0px;
+
+    color: #fff;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 770px;">{{:descricao}}</div>
             </div>
+            <div style="z-index: 1000;
+    position: fixed;
+    right: -258px;
+    bottom: 119px;
+    color: #fff;
+    font-size: 12px;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    padding: 10px;
+    width: 315px;
+    -webkit-transform: rotate(270deg);
+    -webkit-transform-origin-x: 25px;
+    -webkit-transform-origin-y: 0px;
+    -moz-transform: rotate(270deg);
+    -moz-transform-origin: 25px 0;
+">Credito Foto:{{:credito}}</div>
         </div>
 
     </script>
@@ -162,10 +185,10 @@
         jQuery(function () {
 
             setTimeout(function () {
-                buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=10&page=1&id_galeria=' + id, "template", "conteudo")
+                buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=1&page=1&id_galeria=' + id, "template", "conteudo")
 
             }, 3000);
-            var a = buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=10&page=1&id_galeria=' + id, "templatePassador", "passador")
+            var a = buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=1&page=1&id_galeria=' + id, "templatePassador", "passador")
             var a = buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=1&page=1&id_galeria=' + id, "templateTitulo", "titulo")
         })
     </script>
