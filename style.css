@@ -1544,7 +1544,7 @@ header.headerAnimate2 .container{
     width: 200px;
 }
 .tz-header1 .tzlogo a{
-    transition: all 0.5s linear 0s;
+       transition: all 0.5s linear 0s;
     -moz-transition: all 0.5s linear 0s;
     -webkit-transition: all 0.5s linear 0s;
     -ms-transition: all 0.5s linear 0s;
@@ -1552,15 +1552,16 @@ header.headerAnimate2 .container{
     height: 167px;
     display: inline-block;
     width: 167px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+    /* -webkit-border-radius: 50%; */
     -o-border-radius: 50%;
     -ms-border-radius: 50%;
-    background: #fff;
+   
     vertical-align: middle;
     text-align: center;
-    padding-top: 45px;
+    /* padding-top: 45px; */
+    margin-top: -33px;
 }
 header.headerAnimate{
     background: #2F326B;
@@ -1571,7 +1572,7 @@ header.headerAnimate{
     height: 85px;
     background: transparent !important;
     width: 96px;
-    padding-top: 15px;
+    padding-top: 20px;
 
 }
 .tz-header1 .tzlogo a img{
@@ -1580,10 +1581,10 @@ header.headerAnimate{
     -webkit-transition: all 0.5s linear 0s;
     -ms-transition: all 0.5s linear 0s;
     -o-transition: all 0.5s linear 0s;
-    height: 89px;
+    height: 200px;
 }
 .tz-header1.headerAnimate .tzlogo a img{
-    height:64px;
+    height:100px;
 }
 .headerAnimate .tznav-menu{
     padding: 0;
