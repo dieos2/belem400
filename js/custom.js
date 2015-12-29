@@ -18,26 +18,28 @@ jQuery(window).load(function(){
 
     // jQuery for flexslider------------------
     // The slider being synced must be initialized first
-    jQuery('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        directionNav: true,
-        itemWidth: 80,
-        itemMargin: 5,
-        asNavFor: '#slider'
-    });
-
-    jQuery('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        smoothHeight: true,
-        sync: "#carousel"
-    });
-
+    if (jQuery('#carousel').length) {
+        jQuery('#carousel').flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            directionNav: true,
+            itemWidth: 80,
+            itemMargin: 5,
+            asNavFor: '#slider'
+        });
+    }
+    if (jQuery('#slider').length) {
+        jQuery('#slider').flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            smoothHeight: true,
+            sync: "#carousel"
+        });
+    }
     jQuery('div.slotholder').prepend('<div class="bk-responsive-slide"></div>');
 
 
@@ -125,24 +127,25 @@ jQuery(document).ready(function(){
     });
 
     /* Method for Quote */
-    jQuery(".tz-quote").owlCarousel({
-        items : 1,
-        itemsDesktop : [1199,1],
-        itemsDesktopSmall : [979,1],
-        itemsTablet: [768, 1],
-        itemsMobile: [479, 1],
-        slideSpeed:500,
-        paginationSpeed:800,
-        rewindSpeed:1000,
-        autoPlay:false,
-        stopOnHover: false,
-        singleItem:false,
-        rewindNav:false,
-        pagination:false,
-        paginationNumbers:false,
-        itemsScaleUp:false
-    });
-
+    if (jQuery(".tz-quote").length) {
+        jQuery(".tz-quote").owlCarousel({
+            items: 1,
+            itemsDesktop: [1199, 1],
+            itemsDesktopSmall: [979, 1],
+            itemsTablet: [768, 1],
+            itemsMobile: [479, 1],
+            slideSpeed: 500,
+            paginationSpeed: 800,
+            rewindSpeed: 1000,
+            autoPlay: false,
+            stopOnHover: false,
+            singleItem: false,
+            rewindNav: false,
+            pagination: false,
+            paginationNumbers: false,
+            itemsScaleUp: false
+        });
+    }
 
     /* Accordion Toggle Items */
     jQuery('.tzaccordion-content:first').show();
@@ -382,9 +385,11 @@ var setREVStartSize = function() {
                 });
     });	/*ready*/
 
-    jQuery(document).ready(function(){
-        jQuery(".countdown").countdown({
-            date: "january 12 2016 08:00:00", // add the countdown's end date (i.e. 3 november 2012 12:00:00)
-            format: "on" // on (03:07:52) | off (3:7:52) - two_digits set to ON maintains layout consistency
-        });
+    jQuery(document).ready(function () {
+        if (jQuery(".countdown").length) {
+            jQuery(".countdown").countdown({
+                date: "january 12 2016 08:00:00", // add the countdown's end date (i.e. 3 november 2012 12:00:00)
+                format: "on" // on (03:07:52) | off (3:7:52) - two_digits set to ON maintains layout consistency
+            });
+        }
     });
