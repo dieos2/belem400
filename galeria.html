@@ -185,10 +185,10 @@
         jQuery(function () {
 
             setTimeout(function () {
-                buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=1&page=1&id_galeria=' + id, "template", "conteudo")
+                buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=10&page=1&id_galeria=' + id, "template", "conteudo")
 
             }, 3000);
-            var a = buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=1&page=1&id_galeria=' + id, "templatePassador", "passador")
+            var a = buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=10&page=1&id_galeria=' + id, "templatePassador", "passador")
             var a = buscaAPI('http://api.sgn.net.br/Api/Galeria/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=1&page=1&id_galeria=' + id, "templateTitulo", "titulo")
         })
     </script>
