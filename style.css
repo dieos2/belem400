@@ -75,6 +75,15 @@ summary {
     display: block;
 }
 
+@font-face {
+    font-family: 'Nexa';
+    src: url('font/Nexa Light.otf') format('opentype'), url('font/Nexa Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('font/Nexa Bold.otf') format('opentype');
+}
 .tz_icon_menu{
     display: none;
 }
@@ -362,6 +371,7 @@ address{
 .no-grid .alignleft {
     clear: left;
 }
+
 body .wp-caption .wp-caption-text,
 body .entry-caption,
 body .gallery-caption{
@@ -1124,7 +1134,7 @@ body .vc_row{
 body{
     color: #444444;
     display: block;
-    font-family: 'Varela', sans-serif;
+    font-family: Nexa;
     font-size: 14px;
     font-weight: 400;
     line-height: 28px;
