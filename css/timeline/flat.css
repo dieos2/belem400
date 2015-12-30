@@ -95,8 +95,7 @@
 .timelineFlat .t_line_m {
 	margin-top:35px;
 	height:10px;
-	border-left:1px solid transparent;
-	border-right:1px solid #2F326B;
+
 	width:448px;
 }
 
@@ -104,8 +103,7 @@
 .timelineFlat .t_line_m.right {
 	left:449px;
 	width:449px;
-	border-left:1px solid #2F326B;
-	border-right:1px solid transparent;
+	
 }
 
 /* month caption */
