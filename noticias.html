@@ -192,9 +192,17 @@
 
                         </script>
                         <script>
+                            var termo = '';
+                            var filtro = '';
                             var url = window.location.href;
-                            var termo = url.substring(url.indexOf('=')+1);
-                            jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=' + termo + '&filtro=&itens=12&page=1', "template", "conteudo"); })
+
+                            if (url.toLowerCase().indexOf("termo=") >= 0) {
+                             termo = url.substring(url.indexOf('termo=') + 6);
+                            }
+                            if (url.toLowerCase().indexOf("filtro=") >= 0) {
+                                filtro = url.substring(url.indexOf('filtro=') + 7);
+                            }
+                            jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=' + termo + '&filtro=' + filtro + '&itens=12&page=1', "template", "conteudo"); })
                         </script>
 </body>
 </html>
