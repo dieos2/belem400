@@ -95,14 +95,8 @@
                                 </div>
                             </div>
                         </header>
-                        <div class="tzform-search">
-                            <img class="tzcontro_search" src="images/icon_search_delete.png" alt="icon search">
-                            <form method="get" id="searchform" action="#">
-                                <label class="icon-search">&nbsp;</label>
-                                <label for="s" class="assistive-text assistive-tzsearch">Search</label>
-                                <input type="text" class="field Tzsearchform inputbox search-query" name="s" id="s" placeholder="Search..." />
-                                <input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
-                            </form>
+                        <div id="busca" class="tzform-search">
+                           
                         </div>
 
                     </div>
@@ -624,7 +618,7 @@
                                     <div class="blog-item ">
                                         <div class="">
 
-                                            <iframe width="270" height="170" src="https://www.youtube.com/embed/{{:arquivo}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                            <iframe width="270" height="170" src="https://www.youtube.com/embed/{{:codigo}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                                         </div>
 
                                     </div>
@@ -690,9 +684,9 @@
                                     });
                                     var dataIni = '23/12/2015';
                                     var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "template", "noticias");
-                                    var b = buscaAPI('http://api.sgn.net.br/Api/Foto/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=8&page=1', "templateGaleria", "galerias");
-                                    //var c = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "templateVideo", "galerias");
-                                    //var d = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=100&order=asc', "templateTimeLine", "tl1");
+                                    var b = buscaAPI('http://api.sgn.net.br/Api/Foto/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "templateGaleria", "galerias");
+                                    var c = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "templateVideo", "galerias");
+                                    //var d = buscaAPI('http://api.sgn.net.br/Api/Noticia/5?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=100&order=asc', "templateTimeLine", "tl1");
                                     var d = buscaAPI('http://api.sgn.net.br/Api/AgendaTodas/3?dataIni=' + dataIni + '&dataFim=&idOrgao=&termo=&filtro=&order=asc&itens=100&page=1', "templateTimeLine", "tl1");
                                 })
                             </script>
