@@ -115,7 +115,7 @@
                         <div class="wpb_revslider_element wpb_content_element">
                             <!-- START REVOLUTION SLIDER 4.6.0 fullscreen mode -->
                             <div id="rev_slider_3_1_wrapper" class="rev_slider_wrapper fullscreen-container">
-                                <div <!--id="rev_slider_3_1"--> class="rev_slider fullscreenbanner">
+                                <div id="rev_slider_3_1"> class="rev_slider fullscreenbanner">
                                     <ul>
                                         <!-- SLIDE  -->
                                         <li data-transition="fade" data-slotamount="7" data-masterspeed="600" data-saveperformance="off">
@@ -546,10 +546,7 @@
                                             
                                         });
                                         setTimeout(function () { jQuery('.t_line_m').find('a').first().click(); }, 1000);
-                                    }, 500)
-                                  
-
-
+                                    }, 500);
                                 });
 
 
@@ -581,9 +578,7 @@
                                         <div class="">
                                             <a href="galeria.html?id={{:id_galeria}}">
                                                 <img width="255" src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome}}&maxHeight=170&maxWidth=270" class="attachment-medium wp-post-image" alt="bloghome4" />
-                                                <span class="descricao" style="background-color:#000; color:#fff; opacity:0.65;
-	-moz-opacity: 0.65;
-	filter: alpha(opacity=65);display:none;  position:absolute; padding: 0px 0px 0px 18px; width: 255px;     bottom: 30px;
+                                                <span class="descricao" style="background-color:#000; color:#fff; -moz-opacity: 0.65; opacity:0.65; filter: alpha(opacity=65);display:none;  position:absolute; padding: 0px 0px 0px 18px; width: 255px;     bottom: 30px;
 
     left: 25px;">
                                                     {{:titulo}}
@@ -661,7 +656,7 @@
 
                                         jQuery(this).children().children().children("span.descricao").slideToggle("slow", function () {
 
-                                        })
+                                        });
                                     });
                                     var dataIni = '23/12/2015';
                                     var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=Belem400anos&itens=4&page=1', "template", "noticias");
