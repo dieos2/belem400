@@ -1280,13 +1280,14 @@ header.tzadminbar{
 .tz-menu li a{
     font-size: 13px;
     line-height: 38.4px;
-    color: #D2CECE;
+    color: #fff;
     padding: 23px 35px 24px;
     margin: 0;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-shadow: 2px 2px #222238;
 
 }
 .tz-search{
