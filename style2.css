@@ -2456,6 +2456,7 @@ nav .themeple_custom_menu_mega_menu.themeple_mega5 ul li ul li{
     text-align: center;
     color: #666666;
     background: #fff;
+    min-height: 178px;
 }
 .tzintroduct:hover .tzintroduct-img img{
     transform: scale(3) rotate(45deg);
@@ -3018,7 +3019,7 @@ div.wpcf7-validation-errors{
  */
 
 .nocontainer .container-custom{
-    padding: 0 15px;
+    padding: 0 15px ;
     margin: 0 auto;
 }
 .blog-item h3{

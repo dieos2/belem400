@@ -493,20 +493,20 @@
 .timelineFlat .t_left,  
 .timelineFlat .t_left:hover:active {
 	left:0;
-	background: rgba(255,255,255, 0.5) url('../images/timeline/clean/blck-arrow-left.png') no-repeat center center;
+	background: rgba(255,255,255, 0.7) url('../images/timeline/clean/blck-arrow-left.png') no-repeat center center;
 }
 .timelineFlat .t_left:hover {
-	background: rgba(255,255,255, 0.7) url('../images/timeline/clean/blck-arrow-left.png') no-repeat center center;
+	background: rgba(255,255,255, 0.9) url('../images/timeline/clean/blck-arrow-left.png') no-repeat center center;
 }
 
 .timelineFlat .t_right, 
 .timelineFlat .t_right:hover:active{
 	right:0;
-	background: rgba(255,255,255, 0.5) url('../images/timeline/clean/blck-arrow-right.png') no-repeat center center;
+	background: rgba(255,255,255, 0.7) url('../images/timeline/clean/blck-arrow-right.png') no-repeat center center;
 }
 
 .timelineFlat .t_right:hover {
-	background: rgba(255,255,255, 0.7) url('../images/timeline/clean/blck-arrow-right.png') no-repeat center center;
+	background: rgba(255,255,255, 0.9) url('../images/timeline/clean/blck-arrow-right.png') no-repeat center center;
 }
 
 /* -----------------------------------------------------------------------*/
